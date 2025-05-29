@@ -1,12 +1,14 @@
-﻿using System;
+using System;
+using System.IO;
 using System.Windows.Forms;
 using CalendarApp;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1
 {
     public partial class RegistrationForm : Form
     {
+        private const string UsersFilePath = "users.txt";
+
         public RegistrationForm()
         {
             InitializeComponent();
@@ -32,22 +34,38 @@ namespace WinFormsApp1
                 return;
             }
 
-            MessageBox.Show("Регистрация прошла успешно!", "Успех",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
-            this.Hide();
-            this.Close();
+            try
+            {
+               
+                string userData = $"{login}:{password}:{phone}";
+
+                
+                File.AppendAllText(UsersFilePath, userData + Environment.NewLine);
+
+                MessageBox.Show("Регистрация прошла успешно!", "Успех",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Form1 form = new Form1();
+                form.Show();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при сохранении данных: {ex.Message}", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void backToLogin_Click(object sender, EventArgs e)
         {
+            Form1 form = new Form1();
+            form.Show();
             this.Close();
         }
 
         private void RegistrationForm_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
