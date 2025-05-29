@@ -1,0 +1,12 @@
+C:\Users\Vadim\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\CalendarApp.csproj.AssemblyReference.cache
+C:\Users\Vadim\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\CalendarApp.MainForm.resources
+C:\Users\Vadim\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.Properties.Resources.resources
+C:\Users\Vadim\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\CalendarApp.csproj.GenerateResource.cache
+C:\Users\Vadim\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\CalendarApp.csproj.CoreCompileInputs.cache
+C:\Users\Vadim\source\repos\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\WindowsFormsApp7.exe.config
+C:\Users\Vadim\source\repos\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\WindowsFormsApp7.exe
+C:\Users\Vadim\source\repos\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\WindowsFormsApp7.pdb
+C:\Users\Vadim\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.exe
+C:\Users\Vadim\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.pdb
+C:\Users\Vadim\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WinFormsApp1.Form1.resources
+C:\Users\Vadim\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WinFormsApp1.RegistrationForm.resources
