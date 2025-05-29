@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.IO;
 using System.Windows.Forms;
 using CalendarApp;
 
@@ -6,6 +7,8 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
+        private const string UsersFilePath = "users.txt";
+
         public Form1()
         {
             InitializeComponent();
@@ -40,12 +43,59 @@ namespace WinFormsApp1
                 MainForm mainForm = new MainForm();
                 mainForm.Show();
                 this.Hide();
+                return;
+            }
+
+
+            if (CheckUserCredentials(username, password))
+            {
+                MessageBox.Show("Вход выполнен успешно!", "Успех",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+                this.Hide();
             }
             else
             {
                 MessageBox.Show("Неверное имя пользователя или пароль",
                     "Ошибка входа", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private bool CheckUserCredentials(string username, string password)
+        {
+            try
+            {
+                if (!File.Exists(UsersFilePath))
+                {
+                    return false;
+                }
+
+                string[] allUsers = File.ReadAllLines(UsersFilePath);
+
+                foreach (string user in allUsers)
+                {
+
+                    string[] parts = user.Split(':');
+                    if (parts.Length >= 2) 
+                    {
+                        string storedUsername = parts[0];
+                        string storedPassword = parts[1];
+
+                        if (storedUsername == username && storedPassword == password)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при чтении файла пользователей: {ex.Message}",
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return false;
         }
 
         private void label1_Click(object sender, EventArgs e)
